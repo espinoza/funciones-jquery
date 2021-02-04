@@ -2,6 +2,9 @@ $(document).ready(function(){
 
   $('.spinner-border').hide();
   $('#jquery-logo').attr('width', '200px');
+  $('#demo').addClass('text-center');
+
+  $('.nav-item').addClass('p-0 px-1 py-sm-1')
 
   let jQueryDocLink = 'https://api.jquery.com/';
 
@@ -25,10 +28,10 @@ $(document).ready(function(){
     '.before': 'Haz clic en un botón para agregar un símbolo antes de cada elemento de la misma clase.',
     '.after': 'Haz clic en un botón para agregar un símbolo después de cada elemento de la misma clase.',
     '.append': 'Haz clic en un botón para anexar un símbolo dentro de cada elemento de la misma clase.',
-    '.html': '',
-    '.attr': '',
+    //'.html': '',
+    //'.attr': '',
     '.val': 'Selecciona o escribe valores y únelos en el cuadro de más abajo.',
-    '.text': 'Presiona cualquier botón para obtener el texto que estos contienen y anexarlo al texto de más abajo.'
+    '.text': 'Presiona cualquier botón para obtener el texto que estos contienen y anexarlo al espacio de más abajo.'
   };
 
 
@@ -55,6 +58,8 @@ $(document).ready(function(){
 
 
   function useJQueryFunction(itemName) {
+
+    $('#demo').html('');
 
     if (itemName == '.click') {
       let buttonClickMe = "<button class='click-button'>Cliquéame</button>";
@@ -101,7 +106,7 @@ $(document).ready(function(){
         let buttonClickMe = "<button class='click-button'>Texto " + i + "</button>";
         $('#demo').append(buttonClickMe);
       }
-      $('#demo').append("<div id='texts' class='text-center'></div>");
+      $('#demo').append("<div id='texts'></div>");
       for (let i = 1; i <= 6; i++) {
         let toggleText = "<p id='text-" + i + "' class='toggle-text'>" + "< ".repeat(i) + "Este es el texto " + i + " >".repeat(i) + "</p>";
         $('#texts').append(toggleText);
@@ -120,7 +125,7 @@ $(document).ready(function(){
         let buttonClickMe = "<button class='click-button'>Texto " + i + "</button>";
         $('#demo').append(buttonClickMe);
       }
-      $('#demo').append("<div id='texts' class='text-center'></div>");
+      $('#demo').append("<div id='texts'></div>");
       for (let i = 1; i <= 6; i++) {
         let slideText = "<p id='slide-down-" + i + "' class='slide-text'>" + "< ".repeat(i) + "Este es el texto " + i + " >".repeat(i) + "<br>";
         slideText += i*200 + ' milésimas de segundo en aparecer</p>';
@@ -141,7 +146,7 @@ $(document).ready(function(){
         let buttonClickMe = "<button class='click-button'>Texto " + i + "</button>";
         $('#demo').append(buttonClickMe);
       }
-      $('#demo').append("<div id='texts' class='text-center'></div>");
+      $('#demo').append("<div id='texts'></div>");
       for (let i = 1; i <= 6; i++) {
         let slideText = "<p id='slide-up-" + i + "' class='slide-text'>" + "< ".repeat(i) + "Este es el texto " + i + " >".repeat(i) + "<br>";
         slideText += i*200 + ' milésimas de segundo en desaparecer</p>';
@@ -161,7 +166,7 @@ $(document).ready(function(){
         let buttonClickMe = "<button class='click-button'>Texto " + i + "</button>";
         $('#demo').append(buttonClickMe);
       }
-      $('#demo').append("<div id='texts' class='text-center'></div>");
+      $('#demo').append("<div id='texts'></div>");
       for (let i = 1; i <= 6; i++) {
         let slideText = "<p id='slide-toggle-" + i + "' class='slide-text'>" + "< ".repeat(i) + "Este es el texto " + i + " >".repeat(i) + "<br>";
         slideText += i*200 + ' milésimas de segundo</p>';
@@ -182,7 +187,7 @@ $(document).ready(function(){
         let buttonClickMe = "<button class='click-button'>Texto " + i + "</button>";
         $('#demo').append(buttonClickMe);
       }
-      $('#demo').append("<div id='texts' class='text-center'></div>");
+      $('#demo').append("<div id='texts'></div>");
       for (let i = 1; i <= 6; i++) {
         let fadeText = "<p id='fade-in-" + i + "' class='fade-in'>" + "< ".repeat(i) + "Este es el texto " + i + " >".repeat(i) + "<br>";
         fadeText += i*200 + ' milésimas de segundo</p>';
@@ -203,7 +208,7 @@ $(document).ready(function(){
         let buttonClickMe = "<button class='click-button'>Texto " + i + "</button>";
         $('#demo').append(buttonClickMe);
       }
-      $('#demo').append("<div id='texts' class='text-center'></div>");
+      $('#demo').append("<div id='texts'></div>");
       for (let i = 1; i <= 6; i++) {
         let fadeText = "<p id='fade-out-" + i + "' class='fade-out'>" + "< ".repeat(i) + "Este es el texto " + i + " >".repeat(i) + "<br>";
         fadeText += i*200 + ' milésimas de segundo</p>';
@@ -224,7 +229,6 @@ $(document).ready(function(){
       for (let i = 1; i <= 6; i++) {
         let buttonClickMe = "<button id='btn-class-" + i + "' class='click-button'>" + classesNames[i-1] + "</button>";
         $('#demo').append(buttonClickMe);
-        $('#demo').addClass('text-center');
         $('#btn-class-' + i).addClass(classes[i-1]);
       }
       $('.click-button').addClass('btn btn-light col-6 col-md-4 col-lg-2');
@@ -239,7 +243,6 @@ $(document).ready(function(){
     };
 
     if (itemName == '.before') {
-      $('#demo').addClass('text-center');
       for (let i = 1; i <= 3; i++) {
         $('#demo').append('<div class="row">');
         $('#demo').append('<button class="click-button btn-success">Verde ' + i + '</button>');
@@ -257,7 +260,6 @@ $(document).ready(function(){
     };
 
     if (itemName == '.after') {
-      $('#demo').addClass('text-center');
       for (let i = 1; i <= 3; i++) {
         $('#demo').append('<div class="row">');
         $('#demo').append('<button class="click-button btn-success">Verde ' + i + '</button>');
@@ -275,7 +277,6 @@ $(document).ready(function(){
     };
 
     if (itemName == '.append') {
-      $('#demo').addClass('text-center');
       for (let i = 1; i <= 3; i++) {
         $('#demo').append('<div class="row">');
         $('#demo').append('<button class="click-button btn-success">Verde ' + i + '</button>');
@@ -292,14 +293,14 @@ $(document).ready(function(){
       })
     };
 
-    if (itemName == '.html') {
-    };
+    //if (itemName == '.html') {
+    //};
 
-    if (itemName == '.attr') {
-    };
+    //if (itemName == '.attr') {
+    //};
 
     if (itemName == '.val') {
-      textosInput = [['Perro','Gato','Elefante'], ['Grande','Mediano','Pequeño'], ['Rojo','Verde','Gris']];
+      textosInput = [['Gato','Perro','Elefante'], ['Pequeño','Mediano','Grande'], ['Rojo','Café','Gris']];
       for (let i = 0; i < 3; i++) {
         $('#demo').append('<div id="row-' + i + '" class="row"></div>');
         for (let j = 0; j < 3; j++) {
@@ -308,12 +309,12 @@ $(document).ready(function(){
         }
         $('#demo').append('<input id="input-text-' + i + '" class="input-text" value="" type="text">');
       }
-      $('.click-button').addClass('btn btn-light col-4');
-      $('.input-text').addClass('offset-4 col-4 offset-4 text-center mb-4');
+      $('.click-button').addClass('btn btn-light col-4 border-secondary');
+      $('.input-text').addClass('col-4 text-center mb-4 mt-2');
       $('#demo').append('<button id="use-val">Unir valores</button>');
       $('#use-val').addClass('d-block btn btn-success offset-4 col-4 mt-2');
       $('#demo').append('<p id="values-together"></p>');
-      $('#values-together').addClass('border border-prinary p-4 mt-4 text-center');
+      $('#values-together').addClass('border border-prinary p-4 mt-4');
       $('.click-button').click(function(){
         num = $(this).attr('id').slice(13,14);
         $('#input-text-' + num).val($(this).text());
@@ -330,19 +331,19 @@ $(document).ready(function(){
       let topKeyboardRow = ['q','w','e','r','t','y','u','i','o','p'];
       let middleKeyboardRow = ['a','s','d','f','g','h','j','k','l'];
       let bottomKeyboardRow = ['z','x','c','v','b','n','m',',','.'];
-      $('#demo').append('<div class="top-row row text-center"></div>');
+      $('#demo').append('<div class="top-row row"></div>');
       for (key of topKeyboardRow){
         $('.top-row').append('<button class="btn btn-dark key col py-lg-3">' + key + '</button>');
       }
-      $('#demo').append('<div class="middle-row row text-center ml-1 mr-3 ml-lg-1 mr-lg-5"></div>');
+      $('#demo').append('<div class="middle-row row ml-1 mr-3 ml-lg-1 mr-lg-5"></div>');
       for (key of middleKeyboardRow){
         $('.middle-row').append('<button class="btn btn-dark key col py-lg-3">' + key + '</button>');
       }
-      $('#demo').append('<div class="bottom-row row text-center ml-3 mr-2 ml-lg-5 mr-lg-1"></div>');
+      $('#demo').append('<div class="bottom-row row ml-3 mr-2 ml-lg-5 mr-lg-1"></div>');
       for (key of bottomKeyboardRow){
         $('.bottom-row').append('<button class="btn btn-dark key col py-lg-3">' + key + '</button>');
       }
-      $('#demo').append('<div class="space-row row text-center"></div>');
+      $('#demo').append('<div class="space-row row"></div>');
       $('.space-row').append('<button class="btn btn-dark key offset-3 col-7 py-3 py-lg-4"> </button>');
       $('.key').addClass('border-light')
       $('#demo').append('<p id="lettersWritten" class="mt-3"></p>');
